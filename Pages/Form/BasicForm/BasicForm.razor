@@ -1,6 +1,7 @@
 ﻿@namespace blazorAntdProTemplate.Pages.Form
 @page "/form/basic-form"
 
+
 <PageContainer Title="Basic Form">
     <Breadcrumb>
         <Breadcrumb>
@@ -14,10 +15,9 @@
     </Content>
     <ChildContent>
         <Card>
-            <Form 
-                Model="@_model"
-                Style="margin-top: 8px;"
-                OnFinish="HandleSubmit">
+            <Form Model="@_model"
+                  Style="margin-top: 8px;"
+                  OnFinish="HandleSubmit">
                 <FormItem Label="Title" LabelCol="_formItemLayout.LabelCol" WrapperCol="_formItemLayout.WrapperCol">
                     <Input Placeholder="Give the target a name" @bind-Value="@context.Title" />
                 </FormItem>

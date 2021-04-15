@@ -1,21 +1,20 @@
 ﻿@namespace blazorAntdProTemplate
 @inherits LayoutComponentBase
 
-<AntDesign.Pro.Layout.BasicLayout 
-    Logo="@("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg")"
-    MenuData="_menuData">
+<AntDesign.Pro.Layout.BasicLayout Logo="@("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg")" MenuData="_menuData">
     <RightContentRender>
-        <blazorAntdProTemplate.Components.RightContent />
+        <blazorAntdProTemplate.Components.RightContent />        
     </RightContentRender>
     <ChildContent>
+        <blazorAntdProTemplate.Components.LostConnect />
         @Body
     </ChildContent>
 </AntDesign.Pro.Layout.BasicLayout>
-<SettingDrawer />
+
 
 @code
-{
-    private MenuDataItem[] _menuData = {};
+{ 
+    private MenuDataItem[] _menuData = { };
 
     [Inject] public HttpClient HttpClient { get; set; }
 
@@ -23,5 +22,5 @@
     {
         await base.OnInitializedAsync();
         _menuData = await HttpClient.GetFromJsonAsync<MenuDataItem[]>("data/menu.json");
-    }
+    } 
 }

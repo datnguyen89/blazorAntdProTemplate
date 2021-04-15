@@ -4,16 +4,39 @@
 <GridContent>
     <Row>
         <AntDesign.Col Span="24">
-            <Select @bind-Value="@_selectedValue2"
-                    DefaultValue="@("lucy")"
-                    Style="width: 120px;"
-                    TItemValue="string"
-                    TItem="string">
-                <SelectOptions>
-                    <SelectOption TItemValue="string" TItem="string" Value="@("lucy")" Label="Lucy"  Disabled="true" />
-                    <SelectOption TItemValue="string" TItem="string" Value="@("Alex")" Label="Alex" />
-                </SelectOptions>
-            </Select>
+            <div class="test">
+                <a>Link with css global variable</a>
+            </div>
+            <Divider />
+            <div>
+                <Steps>
+                    <Step Status="finish" Title="Login" Icon="user" />
+                    <Step Status="finish" Title="Verification" Icon="solution" />
+                    <Step Status="process" Title="Pay" Icon="loading" />
+                    <Step Status="wait" Title="Done" Icon="smile" />
+                </Steps>
+                <Divider />
+                <Steps Current="2" Class="steps">
+                    <Step Title="@("Fill in the transfer information")" />
+                    <Step Title="@("Confirm transfer information")" />
+                    <Step Title="@("Proceed")" />
+                </Steps>
+            </div>
+            <Divider></Divider>
+            <Tabs DefaultActiveKey="1">
+                <TabPane Key="1">
+                    <Tab>Tab 1</Tab>
+                    <ChildContent>Tab 1</ChildContent>
+                </TabPane>
+                <TabPane Key="2" Disabled>
+                    <Tab>Tab 2</Tab>
+                    <ChildContent>Tab 2</ChildContent>
+                </TabPane>
+                <TabPane Key="3">
+                    <Tab>Tab 3</Tab>
+                    <ChildContent>Tab 3</ChildContent>
+                </TabPane>
+            </Tabs>
         </AntDesign.Col>
     </Row>
     <Row Type="flex" Gutter="24">
@@ -80,4 +103,3 @@
     <SalesCard />
 </GridContent>
 
-@code { string _selectedValue1, _selectedValue2, _selectedValue3; }

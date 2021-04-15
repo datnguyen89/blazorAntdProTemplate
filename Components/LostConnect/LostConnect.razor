@@ -1,0 +1,15 @@
+﻿@namespace blazorAntdProTemplate.Components
+<div id="components-reconnect-modal" class="my-reconnect-modal components-reconnect-hide">
+    <div class="show">
+        <Spin Tip="Reconnecting to server" Size="large" />
+    </div>
+    <div class="failed">
+
+    </div>
+    <div class="rejected">
+        <Result Status="warning" Title="There are some problems with your connection." />
+    </div>
+</div>
+
+@code {RenderFragment extra =@<Button Type="primary">Reload</Button>;
+}
