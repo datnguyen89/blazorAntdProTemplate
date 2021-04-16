@@ -14,7 +14,7 @@
     <link href="_content/AntDesign.Pro.Layout/css/ant-design-pro-layout-blazor.css" rel="stylesheet" />
     <link href="./css/site.css" rel="stylesheet" />
 </head>
-<body>   
+<body>
 
     <app>
         <component type="typeof(App)" render-mode="Server" />
@@ -24,5 +24,10 @@
     <script src="_content/AntDesign/js/ant-design-blazor.js"></script>
     <script src="_content/AntDesign.Charts/ant-design-charts-blazor.js"></script>
     <script src="_framework/blazor.server.js"></script>
+    <script>
+        function BlazorSetTitle(title) {
+            document.title = title;
+        }
+    </script>
 </body>
 </html>

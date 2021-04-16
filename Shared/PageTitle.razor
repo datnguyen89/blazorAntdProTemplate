@@ -1,0 +1,12 @@
+﻿@inject IJSRuntime JSRuntime
+@namespace blazorAntdProTemplate.Shared
+
+@code{
+    [Parameter]
+    public string Value { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("BlazorSetTitle", Value.Length > 0 ? Value : "Blazor Antd Pro");
+    }
+}

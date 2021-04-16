@@ -164,6 +164,11 @@
         "path": "/account/settings",
         "name": "Personal settings",
         "key": "account.settings"
+      },
+      {
+        "path": "/list/users",
+        "name": "Personal settings",
+        "key": "account.settings"
       }
     ]
   }

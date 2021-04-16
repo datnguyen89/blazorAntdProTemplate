@@ -1,12 +1,13 @@
 ﻿@namespace blazorAntdProTemplate
 @inherits LayoutComponentBase
+@using blazorAntdProTemplate.Components
 
 <AntDesign.Pro.Layout.BasicLayout Logo="@("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg")" MenuData="_menuData">
     <RightContentRender>
         <blazorAntdProTemplate.Components.RightContent />        
     </RightContentRender>
     <ChildContent>
-        <blazorAntdProTemplate.Components.LostConnect />
+        <LostConnect />
         @Body
     </ChildContent>
 </AntDesign.Pro.Layout.BasicLayout>
