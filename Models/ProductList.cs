@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace blazorAntdProTemplate.Models
 {
-    public class User
+    public class Product
     {
         public int Id { set; get; }
         public string Email { set; get; }
@@ -18,13 +18,13 @@ namespace blazorAntdProTemplate.Models
         public string Url { set; get; }
         public string Text { set; get; }
     }
-    public class ResponseUsers
+    public class ProductList
     {
         public int Page { set; get; }
         public int PerPage { set; get; }
         public int Total { set; get; }
         public int TotalPage { set; get; }
-        public User[] Data { set; get; } = Array.Empty<User>();
+        public Product[] Data { set; get; } = Array.Empty<Product>();
         public Support Support { set; get; }
     }
 }

@@ -171,5 +171,18 @@
         "key": "list.users-list"
       }
     ]
+  },
+  {
+    "path": "/product",
+    "name": "Productsss",
+    "key": "product",
+    "icon": "barcode",
+    "children": [
+      {
+        "path": "/product/product-list",
+        "name": "Product Center",
+        "key": "product.list"
+      }
+    ]
   }
 ]
