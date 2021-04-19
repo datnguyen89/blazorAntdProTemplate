@@ -167,8 +167,8 @@
       },
       {
         "path": "/list/users",
-        "name": "Personal settings",
-        "key": "account.settings"
+        "name": "Users List",
+        "key": "list.users-list"
       }
     ]
   }
