@@ -4,10 +4,11 @@
 @using blazorAntdProTemplate.Components.FlexBox
 @using blazorAntdProTemplate.Components.LoadingAnimation
 @using blazorAntdProTemplate.Components.CallBackComponent
+@using blazorAntdProTemplate.Pages.ProductPage.ProductCateGory
 
 
 <CallbackComponent CallBackEvent="OnSelectedBank"></CallbackComponent>
-
+<ProductCategory Data="@Text" />
 <Table TItem="Product"
        DataSource="@_data.Data"
        Total="@_data.Total"
@@ -31,15 +32,17 @@
 
     </AntDesign.Column>
     <AntDesign.Column @bind-Field="@context.Avatar">
-        <Image Preview="false" Src="@context.Avatar" Height="100px" />
+        <Image Preview="false" Src="@context.Avatar" Height="50px" />
     </AntDesign.Column>
 </Table>
 
 
 
 @code {
+    private string Text = "";
     private void OnSelectedBank(Bank bank)
     {
+        Text = "Not OK!";
         Console.WriteLine(bank);
     }
 }

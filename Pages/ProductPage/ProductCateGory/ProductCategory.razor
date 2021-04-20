@@ -1,0 +1,11 @@
+﻿<h3>@Data</h3>
+
+@code {
+    [Parameter]
+    public string Data { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        //System.Threading.Thread.Sleep(4000);       
+    }
+}
