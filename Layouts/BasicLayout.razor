@@ -1,5 +1,6 @@
 ﻿@namespace blazorAntdProTemplate
 @inherits LayoutComponentBase
+@inject AppState appState
 @using blazorAntdProTemplate.Components
 @using blazorAntdProTemplate.Components.LoadingAnimation
 
@@ -12,19 +13,23 @@
         @Body
     </ChildContent>
 </AntDesign.Pro.Layout.BasicLayout>
-<LoadingAnimation Loading="@Loading" />
+<LoadingAnimation Loading="@appState.AppLoading" />
 
 @code
 {
     private MenuDataItem[] _menuData = { };
 
-    public bool Loading = false;
 
     [Inject] public HttpClient HttpClient { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
+        appState.OnChangeAppLoading += StateHasChanged;
         _menuData = await HttpClient.GetFromJsonAsync<MenuDataItem[]>("data/menu.json");
+    }
+    public void Dispose()
+    {
+        appState.OnChangeAppLoading -= StateHasChanged;
     }
 }

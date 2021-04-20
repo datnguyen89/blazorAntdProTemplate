@@ -8,7 +8,9 @@
 
 
 <CallbackComponent CallBackEvent="OnSelectedBank"></CallbackComponent>
-<ProductCategory Data="@Text" />
+
+<ProductCategory Data="@ProductCategory"/>
+
 <Table TItem="Product"
        DataSource="@_data.Data"
        Total="@_data.Total"
@@ -38,11 +40,9 @@
 
 
 
-@code {
-    private string Text = "";
+@code {    
     private void OnSelectedBank(Bank bank)
-    {
-        Text = "Not OK!";
+    {        
         Console.WriteLine(bank);
     }
 }

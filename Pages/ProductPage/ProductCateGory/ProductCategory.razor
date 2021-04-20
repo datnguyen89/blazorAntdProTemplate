@@ -1,11 +1,18 @@
-﻿<h3>@Data</h3>
+﻿<h3>
+    @Data
+</h3>
 
 @code {
     [Parameter]
     public string Data { get; set; }
+
+    [Inject] protected AppState appState { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        //System.Threading.Thread.Sleep(4000);       
+        appState.SetLoading(true);
+        Data = "Change";
+        appState.SetLoading(false);
     }
 }

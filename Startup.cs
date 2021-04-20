@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AntDesign.Pro.Layout;
 using blazorAntdProTemplate.Services;
+using blazorAntdProTemplate.Models;
 
 namespace blazorAntdProTemplate
 {
@@ -42,6 +43,7 @@ namespace blazorAntdProTemplate
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IProfileService, ProfileService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<AppState>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
