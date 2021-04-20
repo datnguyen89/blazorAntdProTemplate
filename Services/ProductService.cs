@@ -9,7 +9,7 @@ namespace blazorAntdProTemplate.Services
 {
     public interface IProductService
     {
-        Task<ProductList> GetCurrentProductAsync();
+        Task<ProductList> GetCurrentProductAsync(int page);
     }
 
     public class ProductService : IProductService
@@ -21,11 +21,9 @@ namespace blazorAntdProTemplate.Services
             _httpClient = httpClient;
         }
 
-        public async Task<ProductList> GetCurrentProductAsync()
+        public async Task<ProductList> GetCurrentProductAsync(int page)
         {
-            _httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer abvdef");
-
-            var data = await _httpClient.GetFromJsonAsync<ProductList>("https://reqres.in/api/users?page=2");
+            var data = await _httpClient.GetFromJsonAsync<ProductList>($"https://reqres.in/api/users?page={page}");
             return data;
         }
     }

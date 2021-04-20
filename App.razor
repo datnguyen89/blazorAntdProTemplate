@@ -1,5 +1,6 @@
 @inject NavigationManager NavigationManager
 
+
 <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(BasicLayout)" />
@@ -18,6 +19,7 @@
     </NotFound>
 </Router>
 <AntContainer />
+
 @code
 { 
     private void NavigateToHome()

@@ -1,0 +1,22 @@
+﻿
+<div style="
+        display: flex;
+        flex-direction: @(String.IsNullOrEmpty(FlexDirection) ? "row" : FlexDirection);
+        justify-content: @(String.IsNullOrEmpty(JustifyContent) ? "flex-start" : JustifyContent);
+        align-items: @(String.IsNullOrEmpty(AlignItems) ? "stretch" : AlignItems);
+    ">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+    [Parameter]
+    public string JustifyContent { get; set; }
+
+    [Parameter]
+    public string AlignItems { get; set; }
+    [Parameter]
+    public string FlexDirection { get; set; }
+}
+

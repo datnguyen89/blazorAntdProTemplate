@@ -1,0 +1,21 @@
+﻿
+@foreach (var item in BankList)
+{
+    <ul style="display: flex">
+        <li style="width:25%">@item.Id</li>
+        <li style="width:25%">@item.BankName</li>
+        <li style="width:10%"><a @onclick="() => HandleClickSelectBank(item)">@item.BankCode</a></li>
+    </ul>
+}
+
+
+@code {
+    [Parameter]
+    public Bank[] BankList { get; set; } = { new Bank(1, "Vietcombank", "VCB"), new Bank(2, "AgriBank", "AGB") };
+    [Parameter]
+    public EventCallback<Bank> CallBackEvent { get; set; }
+    private async void HandleClickSelectBank(Bank selectedBank)
+    {
+        await CallBackEvent.InvokeAsync(selectedBank);
+    }
+}

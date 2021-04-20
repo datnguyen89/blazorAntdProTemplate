@@ -1,0 +1,15 @@
+﻿@if (Loading)
+{
+    <div class="loading-animation-wrapper">
+        <Spin Size="large" />
+    </div>
+}
+else
+{
+    <div></div>
+}
+
+@code{
+    [Parameter]
+    public bool Loading { set; get; } = false;
+}

@@ -180,7 +180,7 @@
     "children": [
       {
         "path": "/product/product-list",
-        "name": "Product Center",
+        "name": "Product List",
         "key": "product.list"
       }
     ]

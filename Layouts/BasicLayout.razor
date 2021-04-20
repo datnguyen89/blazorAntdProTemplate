@@ -1,21 +1,24 @@
 ﻿@namespace blazorAntdProTemplate
 @inherits LayoutComponentBase
 @using blazorAntdProTemplate.Components
+@using blazorAntdProTemplate.Components.LoadingAnimation
 
 <AntDesign.Pro.Layout.BasicLayout Logo="@("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg")" MenuData="_menuData">
     <RightContentRender>
-        <blazorAntdProTemplate.Components.RightContent />        
+        <blazorAntdProTemplate.Components.RightContent />
     </RightContentRender>
     <ChildContent>
         <LostConnect />
         @Body
     </ChildContent>
 </AntDesign.Pro.Layout.BasicLayout>
-
+<LoadingAnimation Loading="@Loading" />
 
 @code
-{ 
+{
     private MenuDataItem[] _menuData = { };
+
+    public bool Loading = false;
 
     [Inject] public HttpClient HttpClient { get; set; }
 
@@ -23,5 +26,5 @@
     {
         await base.OnInitializedAsync();
         _menuData = await HttpClient.GetFromJsonAsync<MenuDataItem[]>("data/menu.json");
-    } 
+    }
 }
