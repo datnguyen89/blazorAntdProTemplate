@@ -1,5 +1,7 @@
 using AntDesign;
 using blazorAntdProTemplate.Models;
+using Microsoft.AspNetCore.Components.Forms;
+using System;
 
 namespace blazorAntdProTemplate.Pages.Form
 {
@@ -38,8 +40,9 @@ namespace blazorAntdProTemplate.Pages.Form
             }
         };
 
-        private void HandleSubmit()
+        private void HandleSubmit(EditContext editContext)
         {
+            Console.WriteLine(editContext);
         }
     }
 }

@@ -1,0 +1,67 @@
+﻿@page "/test-page"
+
+<div>
+    <OneWayBinding WaterfallProp=@propOfOneWayBinding />
+    <LiteralComponent Visible="true" Text="Truyền vào props giá trị bình thường" />
+    <ExpressionComponent Visible=@expressionComponentVisible Text=@expressionComponentText />
+
+    @*Callback events*@
+    <CallbackComponent CallBackEvent="@OnSelectedBank" BankList="@bankList" />
+    @if (selectedBank != null)
+    {
+        <p>Đã chọn @selectedBank.BankCode - @selectedBank.BankName <a @onclick="OnClearBank">Clear</a></p>
+    }
+
+    @*Test events*@
+    <ul>
+        <li>Last multiple of two = @LastMultipleOfTwo</li>
+        <li>Last multiple of three = @LastMultipleOfThree</li>
+    </ul>
+    <Counter OnMultipleOfThree=@UpdateLastMultipleOfThreeValue OnMultipleOfTwoAction=@UpdateLastMultipleOfTwoValue />
+
+    @*
+        Two-way binding: naming convention
+        @bind-CurrentCounterValue : cần có prameter CurrentCounterValue và event callback CurrentCounterValueChanged (tên bắt buộc phải ...Changed) 
+    *@
+    <TwoWayBinding @bind-CurrentCounterValue="@currentCounterValue" />
+    <Button Type="primary" @onclick="IncreaseFromParent">Increase From Parent</Button>
+</div>
+
+@code {
+    private int propOfOneWayBinding = 123; // khởi tạo giá trị truyền vào cho OneWayBinding
+    private bool expressionComponentVisible = true;
+    private string expressionComponentText = "Truyền vào props dạng biểu thức thì thêm @ vào bên phải props";
+
+    // Xử lý khi callback event
+    public Bank[] bankList = { new Bank(1, "Vietcombank", "VCB"), new Bank(2, "AgriBank", "AGB"), new Bank(3, "Techcombank", "TCB") };
+    private Bank selectedBank;
+    private void OnSelectedBank(Bank bank)
+    {
+        Console.WriteLine(bank);
+        selectedBank = bank;
+    }
+    private void OnClearBank()
+    {
+        selectedBank = null;
+    }
+
+    // Test events
+    int LastMultipleOfTwo = 0;
+    int LastMultipleOfThree = 0;
+    private Task UpdateLastMultipleOfThreeValue(int value)
+    {
+        LastMultipleOfThree = value;
+        return Task.CompletedTask;
+    }
+    private void UpdateLastMultipleOfTwoValue(int value)
+    {
+        LastMultipleOfTwo = value;
+    }
+
+    // Two-way binding handle
+    private int currentCounterValue;
+    private void IncreaseFromParent()
+    {
+        currentCounterValue++;
+    }
+}

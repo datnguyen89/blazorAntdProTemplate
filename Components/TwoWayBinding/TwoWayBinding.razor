@@ -1,0 +1,19 @@
+﻿@namespace blazorAntdProTemplate.Components
+
+<div>
+    CurrentCounterValue in MyFirstComponent is @CurrentCounterValue
+</div>
+<Button Type="danger" @onclick=UpdateCurrentCounterValue>Update</Button>
+
+
+@code {
+    [Parameter]
+    public int CurrentCounterValue { get; set; } = 0;
+    [Parameter]
+    public EventCallback<int> CurrentCounterValueChanged { get; set; }
+    async Task UpdateCurrentCounterValue()
+    {
+        CurrentCounterValue++;
+        await CurrentCounterValueChanged.InvokeAsync(CurrentCounterValue);
+    }
+}

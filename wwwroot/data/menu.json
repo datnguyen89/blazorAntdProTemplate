@@ -184,5 +184,11 @@
         "key": "product.list"
       }
     ]
+  },
+  {
+    "path": "/test-page",
+    "name": "Test Page",
+    "key": "product",
+    "icon": "exception"
   }
 ]

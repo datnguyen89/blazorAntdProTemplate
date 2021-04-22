@@ -1,25 +1,20 @@
 ﻿@page "/product/product-list"
 @using AntDesign.TableModels
 @using System.ComponentModel
-@using blazorAntdProTemplate.Components.FlexBox
-@using blazorAntdProTemplate.Components.LoadingAnimation
-@using blazorAntdProTemplate.Components.CallBackComponent
-@using blazorAntdProTemplate.Pages.ProductPage.ProductCateGory
 
 
-<CallbackComponent CallBackEvent="OnSelectedBank"></CallbackComponent>
 
-<ProductCategory Data="@ProductCategory"/>
+@*Total="@_data.Total"
+    PageIndex="@PageIndex"
+    PageSize="@PageSize"
+    OnPageIndexChange="PageIndexChanged"
+    OnPageSizeChange="PageSizeChanged"*@
 
 <Table TItem="Product"
        DataSource="@_data.Data"
-       Total="@_data.Total"
-       PageIndex="@PageIndex"
-       PageSize="@PageSize"
-       OnPageIndexChange="PageIndexChanged">
-
-    <AntDesign.Column @bind-Field="@context.Id" />
-    <AntDesign.Column @bind-Field="@context.Email">
+       HidePagination="true">
+    <AntDesign.Column @bind-Field=@context.Id />
+    <AntDesign.Column @bind-Field=@context.Email>
         <TitleTemplate>
             <FlexBox JustifyContent="center" AlignItems="center"> <Icon Type="mail" /> Email   </FlexBox>
         </TitleTemplate>
@@ -27,22 +22,28 @@
             <a>@context.Email</a>
         </ChildContent>
     </AntDesign.Column>
-    <AntDesign.Column @bind-Field="@context.First_Name">
+    <AntDesign.Column @bind-Field=@context.First_Name>
         <a>@context.First_Name</a>
     </AntDesign.Column>
-    <AntDesign.Column @bind-Field="@context.Last_Name">
+    <AntDesign.Column @bind-Field=@context.Last_Name>
 
     </AntDesign.Column>
-    <AntDesign.Column @bind-Field="@context.Avatar">
-        <Image Preview="false" Src="@context.Avatar" Height="50px" />
+    <AntDesign.Column @bind-Field=@context.Avatar>
+        <Image Preview="false" Src=@context.Avatar Height="100px" />
     </AntDesign.Column>
 </Table>
+<Divider />
+<Row Justify="center">
+    <AntDesign.Col>
+        <Pagination ShowSizeChanger="true"
+                    PageSizeOptions="new int[] {6, 12}"
+                    OnChange="OnShowSizeChange"
+                    PageSize="@PageSize"
+                    Current="@PageIndex"
+                    Total="@_data.Total" />
+    </AntDesign.Col>
+</Row>
 
+@code {
 
-
-@code {    
-    private void OnSelectedBank(Bank bank)
-    {        
-        Console.WriteLine(bank);
-    }
 }

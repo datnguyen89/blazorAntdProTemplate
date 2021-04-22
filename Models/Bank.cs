@@ -16,5 +16,9 @@ namespace blazorAntdProTemplate.Models
             BankName = bankName;
             BankCode = bankCode;
         }
+        public Bank()
+        {
+           
+        }
     }
 }

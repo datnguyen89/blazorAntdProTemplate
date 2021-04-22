@@ -1,0 +1,9 @@
+﻿@namespace blazorAntdProTemplate.Components
+
+<div>
+    Binding 1 chiều: @WaterfallProp
+</div>
+@code {
+    [Parameter]
+    public int WaterfallProp { get; set; } // param truyền xuống component con dưới dạng 1 prop
+}
