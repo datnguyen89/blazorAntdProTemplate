@@ -7,7 +7,6 @@ namespace blazorAntdProTemplate.Models
 {
     public class AppState
     {
-
         public int AppLoading { get; private set; }
         public AppState()
         {
