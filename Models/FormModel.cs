@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace blazorAntdProTemplate.Models
 {
@@ -30,6 +31,9 @@ namespace blazorAntdProTemplate.Models
 
     public class BasicFormModel
     {
+        [Required(ErrorMessage = "Tiêu đề không được để trống!")]
+        [MaxLength(20, ErrorMessage = "Độ dài tiêu đề từ 1 đến 20 ký tự")]
+        [MinLength(1, ErrorMessage = "Độ dài tiêu đề từ 1 đến 20 ký tự")]
         public string Title { get; set; }
         public string Client { get; set; }
         public string Invites { get; set; }

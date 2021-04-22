@@ -17,10 +17,12 @@
     <ChildContent>
         <Card>
             <Form Model="@_model"
+                  @ref="form"
                   Style="margin-top: 8px;"
-                  OnFinish="HandleSubmit">
+                  OnFinish="HandleSubmit"
+                  ValidateOnChange="true">
                 <FormItem Label="Title" LabelCol="_formItemLayout.LabelCol" WrapperCol="_formItemLayout.WrapperCol">
-                    <Input Placeholder="Give the target a name" @bind-Value="@context.Title" />
+                    <Input MaxLength="20" Placeholder="Give the target a name" @bind-Value="@context.Title" />
                 </FormItem>
                 <FormItem Label="Start and end date" LabelCol="_formItemLayout.LabelCol" WrapperCol="_formItemLayout.WrapperCol">
                     <RangePicker Style="width:100%;" TValue="DateTime?[]" @bind-Value="@context.DateRange" />
@@ -60,3 +62,8 @@
         </Card>
     </ChildContent>
 </PageContainer>
+
+@code{
+    Form<BasicFormModel> form;
+    
+}

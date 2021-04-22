@@ -1,0 +1,10 @@
+﻿@namespace blazorAntdProTemplate.Components
+
+<h3>BindingDirective</h3>
+<label>Name = @Name</label>
+<input @bind-value=Name @bind-value:event="oninput" />
+@code {
+    private string Name;
+    private DateTime? DateOfBirth;
+    private decimal? BankBalance;
+}
