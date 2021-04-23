@@ -1,4 +1,5 @@
 ﻿@page "/test-page"
+@inject AppState appState
 
 <div>
     <OneWayBinding WaterfallProp=@propOfOneWayBinding />
@@ -21,13 +22,26 @@
 
     @*
         Two-way binding: naming convention
-        @bind-CurrentCounterValue : cần có prameter CurrentCounterValue và event callback CurrentCounterValueChanged (tên bắt buộc phải ...Changed) 
+        @bind-CurrentCounterValue : cần có prameter CurrentCounterValue và event callback CurrentCounterValueChanged (tên bắt buộc phải ...Changed)
     *@
     <TwoWayBinding @bind-CurrentCounterValue="@currentCounterValue" />
     <Button Type="primary" @onclick="IncreaseFromParent">Increase From Parent</Button>
 
     @*Binding Directive*@
     <BindingDirective />
+
+    @*Cascading value by name*@
+    <CascadingValueByName />
+
+    <Button Type="primary" @onclick="OnClickGet">Get</Button>
+    @if (_data != null)
+    {
+        <p>page: @_data.Page - @_time</p>
+    }
+    @if (_data2 != null)
+    {
+        <p>page: @_data2.Page - @_time2</p>
+    }
 </div>
 
 @code {
@@ -66,5 +80,31 @@
     private void IncreaseFromParent()
     {
         currentCounterValue++;
+    }
+    private ProductList _data;
+    private ProductList _data2;
+    private DateTime _time;
+    private DateTime _time2;
+
+    [Inject] protected IProductService ProductService { get; set; }
+    async Task getSample()
+    {
+        await Task.Delay(1000);
+        _data = await ProductService.GetCurrentProductAsync(1);
+        _time = DateTime.Now;
+        StateHasChanged();
+    }
+    async Task getSample2()
+    {
+        await Task.Delay(3000);
+        _data2 = await ProductService.GetCurrentProductAsync(2);
+        _time2 = DateTime.Now;
+        StateHasChanged();
+    }
+    void OnClickGet()
+    {
+        var task1 = Task.Factory.StartNew(getSample);
+        var task2 = Task.Factory.StartNew(getSample2);
+        Task.WaitAll(task1, task2);        
     }
 }

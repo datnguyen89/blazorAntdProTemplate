@@ -1,0 +1,20 @@
+﻿@namespace blazorAntdProTemplate.Components
+
+<h1>Toggle the options</h1>
+<input @bind-value=FirstOptionValue type="checkbox" /> First option
+<br />
+<input @bind-value=SecondOptionValue type="checkbox" /> Second option
+<br />
+<input @bind-value=Description type="text" />
+<CascadingValue Name="FirstOption" Value=@FirstOptionValue>
+    <CascadingValue Name="SecondOption" Value=@SecondOptionValue>
+        <CascadingValue Name="Description" Value="@Description">
+            <CascadingValueByNameNested />
+        </CascadingValue>
+    </CascadingValue>
+</CascadingValue>
+@code {
+    bool FirstOptionValue;
+    bool SecondOptionValue;
+    string Description;
+}

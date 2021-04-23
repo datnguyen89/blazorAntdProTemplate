@@ -51,12 +51,18 @@
                     </RadioGroup>
                 </FormItem>
                 <FormItem Label=" " Style="margin-top:32px" WrapperCol="_submitFormLayout.WrapperCol">
-                    <Button Type="primary" HtmlType="submit">
-                        Submit
-                    </Button>
-                    <Button Style="margin-left:8px">
-                        Save
-                    </Button>
+                    <Space>
+                        <SpaceItem>
+                            <Button Type="primary" HtmlType="submit">Submit</Button>
+                        </SpaceItem>
+                        <SpaceItem>
+                            <Button @onclick="FillForm">Save</Button>
+                        </SpaceItem>
+                        <SpaceItem>
+                            <Button Type="danger" @onclick="ResetForm">Reset</Button>
+                        </SpaceItem>
+                    </Space>
+
                 </FormItem>
             </Form>
         </Card>
@@ -64,6 +70,17 @@
 </PageContainer>
 
 @code{
-    Form<BasicFormModel> form;
-    
+    private Form<BasicFormModel> form;
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+    }
+    private void ResetForm(MouseEventArgs args)
+    {
+        form.Reset();
+    }
+    private void FillForm(MouseEventArgs args)
+    {
+        _model.Title = "auto fill";
+    }
 }

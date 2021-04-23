@@ -3,8 +3,14 @@
 <h3>BindingDirective</h3>
 <label>Name = @Name</label>
 <input @bind-value=Name @bind-value:event="oninput" />
+
+<label>Date of birth = @DateOfBirth?.ToString("MMMM d, yyyy")</label>
+<input @bind-value=DateOfBirth @bind-value:format="yyyy-MM-dd" />
+
 @code {
     private string Name;
     private DateTime? DateOfBirth;
     private decimal? BankBalance;
+
+
 }

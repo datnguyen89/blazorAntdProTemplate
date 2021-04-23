@@ -186,13 +186,15 @@ a:hover {
 /** Button */
 .ant-btn {
     &:hover, &:focus {
-        color: @solidColor !important;
-        border-color: @solidColor !important;
+        &:not(.ant-btn[disabled], .ant-btn-danger, .ant-btn-primary) {
+            color: @solidColor !important;
+            border-color: @solidColor !important;
+        }
     }
 }
 
 .ant-btn-primary {
-    &:not(.ant-btn-background-ghost) {
+    &:not(.ant-btn-background-ghost, .ant-btn[disabled]) {
         background: @gradientColor !important;
         border-color: @solidColor !important;
         color: white !important;
