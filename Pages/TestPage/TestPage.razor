@@ -2,38 +2,44 @@
 @inject AppState appState
 
 <div>
+    <Divider Orientation="left">Binding Literal & Expression</Divider>
     <OneWayBinding WaterfallProp=@propOfOneWayBinding />
     <LiteralComponent Visible="true" Text="Truyền vào props giá trị bình thường" />
     <ExpressionComponent Visible=@expressionComponentVisible Text=@expressionComponentText />
 
     @*Callback events*@
+    <Divider Orientation="left">Event Callback</Divider>
     <CallbackComponent CallBackEvent="@OnSelectedBank" BankList="@bankList" />
     @if (selectedBank != null)
     {
-        <p>Đã chọn @selectedBank.BankCode - @selectedBank.BankName <a @onclick="OnClearBank">Clear</a></p>
+        <p style="margin-top: 16px">Đã chọn @selectedBank.BankCode - @selectedBank.BankName <Button Type="primary" Icon="delete" @onclick="OnClearBank">Clear</Button></p>
     }
 
-    @*Test events*@
-    <ul>
-        <li>Last multiple of two = @LastMultipleOfTwo</li>
-        <li>Last multiple of three = @LastMultipleOfThree</li>
-    </ul>
+    <span>Chia hết cho 2</span>
+    <AntDesign.Progress Percent=@(LastMultipleOfTwo * 10) Status="@ProgressStatus.Active" />
+    <span>Chia hết cho 3</span>
+    <AntDesign.Progress Percent=@(LastMultipleOfThree * 10) Status="@ProgressStatus.Active" />
     <Counter OnMultipleOfThree=@UpdateLastMultipleOfThreeValue OnMultipleOfTwoAction=@UpdateLastMultipleOfTwoValue />
 
     @*
         Two-way binding: naming convention
         @bind-CurrentCounterValue : cần có prameter CurrentCounterValue và event callback CurrentCounterValueChanged (tên bắt buộc phải ...Changed)
     *@
+    <Divider Orientation="left">Two-way Binding</Divider>
     <TwoWayBinding @bind-CurrentCounterValue="@currentCounterValue" />
     <Button Type="primary" @onclick="IncreaseFromParent">Increase From Parent</Button>
 
     @*Binding Directive*@
+    <Divider Orientation="left">BindingDirective</Divider>
     <BindingDirective />
 
     @*Cascading value by name*@
+    <Divider Orientation="left">Cascading value by name</Divider>
     <CascadingValueByName />
 
-    <Button Type="primary" @onclick="OnClickGet">Get</Button>
+    @*Task*@
+    <Divider Orientation="left">Task Test</Divider>
+    <Button Type="primary" @onclick="OnClickGet">Wait All Task Done!</Button>
     @if (_data != null)
     {
         <p>page: @_data.Page - @_time</p>
@@ -42,6 +48,12 @@
     {
         <p>page: @_data2.Page - @_time2</p>
     }
+
+    @*Generated HTML Attribute*@
+    <Divider Orientation="left">Generated HTML Attribute</Divider>
+    <GeneratedHTMLAttributes />
+
+
 </div>
 
 @code {
@@ -81,6 +93,8 @@
     {
         currentCounterValue++;
     }
+
+    // Task test
     private ProductList _data;
     private ProductList _data2;
     private DateTime _time;
@@ -105,6 +119,6 @@
     {
         var task1 = Task.Factory.StartNew(getSample);
         var task2 = Task.Factory.StartNew(getSample2);
-        Task.WaitAll(task1, task2);        
+        Task.WaitAll(task1, task2);
     }
 }

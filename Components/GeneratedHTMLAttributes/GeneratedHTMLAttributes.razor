@@ -1,0 +1,26 @@
+﻿@namespace blazorAntdProTemplate.Components
+
+<div @attributes=MyCodeGeneratedAttributes >Div test</div>
+
+<Button @attributes="@ButtonGeneratedAttributes">Button test</Button>
+
+
+@code
+{
+    Dictionary<string, object> MyCodeGeneratedAttributes;
+    Dictionary<string, object> ButtonGeneratedAttributes;
+    Dictionary<string, object> InputGeneratedAttributes;
+
+    protected override void OnInitialized()
+    {
+        MyCodeGeneratedAttributes = new Dictionary<string, object>();
+        for (int index = 1; index <= 5; index++)
+        {
+            MyCodeGeneratedAttributes["attribute_" + index] = index;
+        }
+        ButtonGeneratedAttributes = new Dictionary<string, object>();
+        ButtonGeneratedAttributes["Type"] =  "primary";
+        ButtonGeneratedAttributes["Disabled"] =  true;
+        ButtonGeneratedAttributes["Block"] =  true;
+    }
+}

@@ -1,10 +1,9 @@
 ﻿@namespace blazorAntdProTemplate.Components
 
-<h3>BindingDirective</h3>
-<label>Name = @Name</label>
+<Tag>Name = @Name</Tag>
 <input @bind-value=Name @bind-value:event="oninput" />
 
-<label>Date of birth = @DateOfBirth?.ToString("MMMM d, yyyy")</label>
+<Tag>Date of birth = @DateOfBirth?.ToString("MMMM d, yyyy")</Tag>
 <input @bind-value=DateOfBirth @bind-value:format="yyyy-MM-dd" />
 
 @code {

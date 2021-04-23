@@ -1,10 +1,11 @@
 ﻿@namespace blazorAntdProTemplate.Components
 
-<ul>
-    <li>FirstOption = @FirstOption</li>
-    <li>SecondOption = @SecondOption</li>
-    <li>Description = @Description</li>
-</ul>
+<div>
+    <br />
+    <Tag>FirstOption = @FirstOption</Tag>
+    <Tag>SecondOption = @SecondOption</Tag>
+    <Tag>Description = @Description</Tag>
+</div>
 @code {
     [CascadingParameter(Name = "FirstOption")]
     private bool FirstOption { get; set; }
