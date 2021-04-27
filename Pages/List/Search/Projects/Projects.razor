@@ -1,4 +1,4 @@
-﻿@namespace blazorAntdProTemplate.Pages.List
+﻿@namespace blazorAntd.Pages.List
 @layout SearchList
 @page "/list/search/projects"
 
@@ -74,13 +74,13 @@
                         <div class="cardItemContent">
                             <span>@context.UpdatedAt.ToFriendlyDisplay()</span>
                             <div class="avatarList">
-                                <blazorAntdProTemplate.Pages.Account.Center.AvatarList>
+                                <blazorAntd.Pages.Account.Center.AvatarList>
                                     @foreach (var member in context.Members) {
-                                        <blazorAntdProTemplate.Pages.Account.Center.AvatarListItem Size="small"
+                                        <blazorAntd.Pages.Account.Center.AvatarListItem Size="small"
                                                                                                     Src="@member.Avatar"
                                                                                                     Tips="@member.Name" />
                                     }
-                                </blazorAntdProTemplate.Pages.Account.Center.AvatarList>
+                                </blazorAntd.Pages.Account.Center.AvatarList>
                             </div>
                         </div>
                     </ChildContent>

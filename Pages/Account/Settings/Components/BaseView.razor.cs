@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
-using blazorAntdProTemplate.Models;
-using blazorAntdProTemplate.Services;
+using blazorAntd.Models;
+using blazorAntd.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Account.Settings
+namespace blazorAntd.Pages.Account.Settings
 {
     public partial class BaseView
     {

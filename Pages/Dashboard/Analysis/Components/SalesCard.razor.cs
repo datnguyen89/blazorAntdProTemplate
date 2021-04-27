@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
 using AntDesign.Charts;
-using blazorAntdProTemplate.Services;
+using blazorAntd.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Dashboard.Analysis
+namespace blazorAntd.Pages.Dashboard.Analysis
 {
     public partial class SalesCard
     {

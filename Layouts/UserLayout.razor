@@ -1,10 +1,10 @@
-﻿@namespace blazorAntdProTemplate
+﻿@namespace blazorAntd
 @using OneOf
 @inherits LayoutComponentBase
 @inject IAppStateService appStateService
 
 <div class="container__b__0">
-    <blazorAntdProTemplate.Components.LostConnect.LostConnect />
+    <blazorAntd.Components.LostConnect.LostConnect />
     <div class="lang">
         <!--todo: selectLang-->
     </div>
@@ -36,4 +36,17 @@
         new LinkItem{ Key = "", BlankTarget = true, Title = OneOf<string, RenderFragment>.FromT1(@<Icon Type="github" />)},
         new LinkItem{ Key = "", BlankTarget = true, Title = "Ant Design"},
     };
+    private void AppStateChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        appStateService.OnChangeAppLoading += AppStateChanged;
+    }
+    public void Dispose()
+    {
+        appStateService.OnChangeAppLoading -= AppStateChanged;
+    }
 }

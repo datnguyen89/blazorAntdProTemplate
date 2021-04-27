@@ -1,9 +1,9 @@
 using AntDesign;
-using blazorAntdProTemplate.Models;
+using blazorAntd.Models;
 using Microsoft.AspNetCore.Components.Forms;
 using System;
 
-namespace blazorAntdProTemplate.Pages.Form
+namespace blazorAntd.Pages.Form
 {
     public class FormItemLayout
     {

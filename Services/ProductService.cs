@@ -3,9 +3,9 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using blazorAntdProTemplate.Models;
+using blazorAntd.Models;
 
-namespace blazorAntdProTemplate.Services
+namespace blazorAntd.Services
 {
     public interface IProductService
     {

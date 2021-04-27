@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Threading.Tasks;
 using AntDesign.Pro.Layout;
-using blazorAntdProTemplate.Models;
-using blazorAntdProTemplate.Services;
+using blazorAntd.Models;
+using blazorAntd.Services;
 using Microsoft.AspNetCore.Components;
 using AntDesign;
 
-namespace blazorAntdProTemplate.Components
+namespace blazorAntd.Components
 {
     public partial class RightContent
     {

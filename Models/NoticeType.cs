@@ -1,4 +1,4 @@
-namespace blazorAntdProTemplate.Models
+namespace blazorAntd.Models
 {
     public class NoticeType
     {

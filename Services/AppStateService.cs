@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using blazorAntdProTemplate.Models;
+using blazorAntd.Models;
 
-namespace blazorAntdProTemplate.Services
+namespace blazorAntd.Services
 {
     public interface IAppStateService
     {

@@ -1,11 +1,11 @@
-﻿@namespace blazorAntdProTemplate
+﻿@namespace blazorAntd
 @inherits LayoutComponentBase
 @inject IAppStateService appStateService
 
 
 <AntDesign.Pro.Layout.BasicLayout FixedHeader="true" Logo="@("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg")" MenuData="_menuData">
     <RightContentRender>
-        <blazorAntdProTemplate.Components.RightContent />
+        <blazorAntd.Components.RightContent />
     </RightContentRender>
     <ChildContent>
         <LostConnect />
@@ -22,14 +22,20 @@
 
     [Inject] public HttpClient HttpClient { get; set; }
 
+    private void AppStateChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        appStateService.OnChangeAppLoading += StateHasChanged;
+        appStateService.OnChangeAppLoading += AppStateChanged;
         _menuData = await HttpClient.GetFromJsonAsync<MenuDataItem[]>("data/menu.json");
     }
     public void Dispose()
     {
-        appStateService.OnChangeAppLoading -= StateHasChanged;
+        appStateService.OnChangeAppLoading -= AppStateChanged;
     }
+
 }

@@ -11,10 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AntDesign.Pro.Layout;
-using blazorAntdProTemplate.Services;
-using blazorAntdProTemplate.Models;
+using blazorAntd.Services;
+using blazorAntd.Models;
 
-namespace blazorAntdProTemplate
+namespace blazorAntd
 {
     public class Startup
     {
@@ -43,7 +43,7 @@ namespace blazorAntdProTemplate
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IProfileService, ProfileService>();
             services.AddScoped<IProductService, ProductService>();
-            services.AddSingleton<IAppStateService , AppStateService>();
+            services.AddScoped<IAppStateService , AppStateService>();
 
             services.AddSingleton<IMySingletonService, MySingletonService>();
             services.AddScoped<IMyScopedService, MyScopedService>();

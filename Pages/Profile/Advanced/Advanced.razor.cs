@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AntDesign.Pro.Layout;
-using blazorAntdProTemplate.Models;
-using blazorAntdProTemplate.Services;
+using blazorAntd.Models;
+using blazorAntd.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Profile {
+namespace blazorAntd.Pages.Profile {
   public partial class Advanced {
     private readonly IList<TabPaneItem> _tabList = new List<TabPaneItem>
         {

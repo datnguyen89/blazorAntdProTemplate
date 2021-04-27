@@ -1,6 +1,6 @@
-using blazorAntdProTemplate.Models;
+using blazorAntd.Models;
 
-namespace blazorAntdProTemplate.Pages.Form
+namespace blazorAntd.Pages.Form
 {
     public partial class Step3
     {

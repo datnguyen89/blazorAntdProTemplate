@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace blazorAntdProTemplate.Models
+namespace blazorAntd.Models
 {
     public class LoginParamsType
     {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Dashboard.Analysis
+namespace blazorAntd.Pages.Dashboard.Analysis
 {
     public partial class Field
     {

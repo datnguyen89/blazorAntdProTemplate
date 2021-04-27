@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.List {
+namespace blazorAntd.Pages.List {
   public partial class TagSelect {
     private readonly IList<TagSelectOption> _options = new List<TagSelectOption>();
     private bool _checkedAll;

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using AntDesign;
 
-namespace blazorAntdProTemplate.Pages.Account.Settings
+namespace blazorAntd.Pages.Account.Settings
 {
     public partial class Index
     {

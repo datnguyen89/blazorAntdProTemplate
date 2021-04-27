@@ -1,8 +1,8 @@
 using System;
 using System.Text.Json.Serialization;
-using blazorAntdProTemplate.Utils;
+using blazorAntd.Utils;
 
-namespace blazorAntdProTemplate.Models
+namespace blazorAntd.Models
 {
     public class Member
     {

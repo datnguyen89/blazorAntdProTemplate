@@ -1,8 +1,8 @@
 using AntDesign;
-using blazorAntdProTemplate.Models;
+using blazorAntd.Models;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Form
+namespace blazorAntd.Pages.Form
 {
     public partial class Step2
     {

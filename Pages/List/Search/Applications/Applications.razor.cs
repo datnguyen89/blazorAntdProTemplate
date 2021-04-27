@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AntDesign;
-using blazorAntdProTemplate.Models;
-using blazorAntdProTemplate.Services;
+using blazorAntd.Models;
+using blazorAntd.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.List
+namespace blazorAntd.Pages.List
 {
     public partial class Applications
     {

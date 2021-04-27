@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace blazorAntdProTemplate.Pages.User
+namespace blazorAntd.Pages.User
 {
     public class RegisterModel
     {

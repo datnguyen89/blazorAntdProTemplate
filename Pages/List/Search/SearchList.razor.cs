@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using AntDesign.Pro.Layout;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.List
+namespace blazorAntd.Pages.List
 {
     public partial class SearchList
     {

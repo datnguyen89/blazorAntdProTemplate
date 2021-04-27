@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using blazorAntdProTemplate.Models;
-using blazorAntdProTemplate.Services;
+using blazorAntd.Models;
+using blazorAntd.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Account.Center
+namespace blazorAntd.Pages.Account.Center
 {
     public partial class Index
     {

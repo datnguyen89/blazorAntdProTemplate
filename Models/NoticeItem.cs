@@ -1,6 +1,6 @@
 ﻿using AntDesign.Pro.Layout;
 
-namespace blazorAntdProTemplate.Models
+namespace blazorAntd.Models
 {
     public class NoticeItem : NoticeIconData
     {

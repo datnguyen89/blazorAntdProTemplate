@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AntDesign;
-using blazorAntdProTemplate.Models;
-using blazorAntdProTemplate.Services;
+using blazorAntd.Models;
+using blazorAntd.Services;
 using Microsoft.AspNetCore.Components;
-using blazorAntdProTemplate.Pages.Form;
+using blazorAntd.Pages.Form;
 
-namespace blazorAntdProTemplate.Pages.List
+namespace blazorAntd.Pages.List
 {
     public partial class Projects
     {

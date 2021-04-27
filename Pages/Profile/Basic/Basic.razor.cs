@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
-using blazorAntdProTemplate.Models;
-using blazorAntdProTemplate.Services;
+using blazorAntd.Models;
+using blazorAntd.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Profile
+namespace blazorAntd.Pages.Profile
 {
     public partial class Basic
     {

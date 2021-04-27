@@ -1,6 +1,6 @@
 using System;
 
-namespace blazorAntdProTemplate.Models
+namespace blazorAntd.Models
 {
     public class ActivitiesType
     {

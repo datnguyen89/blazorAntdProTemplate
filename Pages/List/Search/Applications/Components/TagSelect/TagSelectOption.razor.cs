@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.List
+namespace blazorAntd.Pages.List
 {
     public partial class TagSelectOption
     {

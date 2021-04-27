@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Dashboard.Monitor
+namespace blazorAntd.Pages.Dashboard.Monitor
 {
     public partial class WaterWave
     {

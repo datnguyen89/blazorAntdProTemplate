@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using blazorAntdProTemplate.Models;
-using blazorAntdProTemplate.Services;
+using blazorAntd.Models;
+using blazorAntd.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Dashboard.Workplace {
+namespace blazorAntd.Pages.Dashboard.Workplace {
   public partial class Index {
     private readonly EditableLink[] _links =
         {

@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using blazorAntdProTemplate.Models;
-using blazorAntdProTemplate.Services;
+using blazorAntd.Models;
+using blazorAntd.Services;
 using Microsoft.AspNetCore.Components;
 using AntDesign;
 
-namespace blazorAntdProTemplate.Pages.List
+namespace blazorAntd.Pages.List
 {
     public partial class CardList
     {

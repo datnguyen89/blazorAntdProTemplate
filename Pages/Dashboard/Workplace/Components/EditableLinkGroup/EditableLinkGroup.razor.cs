@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Dashboard.Workplace
+namespace blazorAntd.Pages.Dashboard.Workplace
 {
     public class EditableLink
     {

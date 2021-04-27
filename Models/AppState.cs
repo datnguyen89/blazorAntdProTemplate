@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace blazorAntdProTemplate.Models
+namespace blazorAntd.Models
 {
     public class AppState
     {

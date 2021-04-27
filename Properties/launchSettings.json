@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "blazorAntdProTemplate": {
+    "blazorAntd": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

@@ -1,4 +1,4 @@
-namespace blazorAntdProTemplate.Pages.Dashboard.Analysis
+namespace blazorAntd.Pages.Dashboard.Analysis
 {
     public partial class SalesCard
     {

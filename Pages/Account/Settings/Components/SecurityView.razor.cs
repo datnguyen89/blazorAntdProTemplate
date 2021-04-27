@@ -1,6 +1,6 @@
-using blazorAntdProTemplate.Models;
+using blazorAntd.Models;
 
-namespace blazorAntdProTemplate.Pages.Account.Settings
+namespace blazorAntd.Pages.Account.Settings
 {
     public partial class SecurityView
     {

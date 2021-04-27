@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace blazorAntdProTemplate {
+namespace blazorAntd {
   public static class DateTimeExtension {
     private const int Second = 1;
     private const int Minute = 60 * Second;

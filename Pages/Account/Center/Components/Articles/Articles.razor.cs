@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using blazorAntdProTemplate.Models;
+using blazorAntd.Models;
 using Microsoft.AspNetCore.Components;
 
-namespace blazorAntdProTemplate.Pages.Account.Center
+namespace blazorAntd.Pages.Account.Center
 {
     public partial class Articles
     {

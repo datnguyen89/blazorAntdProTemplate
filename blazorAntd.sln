@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazorAntdProTemplate", "blazorAntdProTemplate.csproj", "{4D6E123D-8629-4351-8263-0749F2520B31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazorAntd", "blazorAntd.csproj", "{4D6E123D-8629-4351-8263-0749F2520B31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
