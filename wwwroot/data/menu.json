@@ -6,7 +6,7 @@
     "icon": "dashboard",
     "children": [
       {
-        "path": "/analysis",
+        "path": "/",
         "name": "Analysis Page",
         "key": "dashboard.analysis"
       },
@@ -203,7 +203,7 @@
         "key": "Dependency.di-page"
       },
       {
-        "path": "/",
+        "path": "/di/di-compare",
         "name": "Compare dependency",
         "key": "Dependency.compare-dependency"
       }
