@@ -79,6 +79,7 @@ namespace blazorAntdProTemplate.Components
 
         public void HandleSelectLang(MenuItem item)
         {
+            MessageService.Success($"Chọn ngôn ngữ {item.Key}");
         }
 
         public async Task HandleClear(string key)
@@ -95,12 +96,17 @@ namespace blazorAntdProTemplate.Components
                     _events = new NoticeIconData[] { };
                     break;
             }
-            await MessageService.Success($"清空了{key}");
+            await MessageService.Success($"Xóa {key}");
         }
 
         public async Task HandleViewMore(string key)
         {
-            await MessageService.Info("Click on view more");
+            await MessageService.Info($"Click on view more {key}");
+        }
+
+        public async Task OnClickNotifyItem(MenuItem item)
+        {
+            await MessageService.Warning($"Clicked Item: {item.Key}");
         }
     }
 }

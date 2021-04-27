@@ -13,27 +13,29 @@ namespace blazorAntdProTemplate.Pages.ProductPage.ProductListPage
     {
         private int PageIndex = 1;
         private int PageSize = 6;
-        private ProductList _data = new ProductList();
-        [Inject] protected IProductService ProductService { get; set; }
-        [Inject] protected AppState appState { get; set; }
-        
+        private ProductList _data = null;
+        [Inject] protected IProductService productService { get; set; }
+        [Inject] protected IAppStateService appStateService { get; set; }
+
+        private async Task GetData(int pageIndex, int pageSize)
+        {
+            appStateService.SetLoading(true);
+            await Task.Delay(1000);
+            _data = await productService.GetCurrentProductAsync(pageIndex);
+            appStateService.SetLoading(false);
+        }
+
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            appState.SetLoading(true);
-            _data = await ProductService.GetCurrentProductAsync(PageIndex);
-            System.Threading.Thread.Sleep(1000);
-            appState.SetLoading(false);
+            await GetData(1, 6);
         }
 
-        private async void OnShowSizeChange(PaginationEventArgs args)
+        private async Task OnShowSizeChange(PaginationEventArgs args)
         {
-            appState.SetLoading(true);
             PageIndex = args.Page;
             PageSize = args.PageSize;
-            _data = await ProductService.GetCurrentProductAsync(PageIndex);
-            System.Threading.Thread.Sleep(1000);
-            appState.SetLoading(false);
+            await GetData(PageIndex, PageSize);
             StateHasChanged();
         }
 

@@ -43,7 +43,11 @@ namespace blazorAntdProTemplate
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IProfileService, ProfileService>();
             services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<AppState>();
+            services.AddSingleton<IAppStateService , AppStateService>();
+
+            services.AddSingleton<IMySingletonService, MySingletonService>();
+            services.AddScoped<IMyScopedService, MyScopedService>();
+            services.AddTransient<IMyTransientService, MyTransientService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

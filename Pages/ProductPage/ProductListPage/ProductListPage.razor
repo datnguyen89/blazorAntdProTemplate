@@ -2,40 +2,45 @@
 @using AntDesign.TableModels
 @using System.ComponentModel
 
+@if (_data != null)
+{
+    <Table TItem="Product"
+           DataSource="@_data.Data"
+           Bordered="true"
+           HidePagination="true">
+        <AntDesign.Column @bind-Field=@context.Id />
+        <AntDesign.Column @bind-Field=@context.Email>
+            <TitleTemplate>
+                <FlexBox JustifyContent="center" AlignItems="center"> <Icon Type="mail" /> Email   </FlexBox>
+            </TitleTemplate>
+            <ChildContent>
+                <a>@context.Email</a>
+            </ChildContent>
+        </AntDesign.Column>
+        <AntDesign.Column @bind-Field=@context.First_Name>
+            <a>@context.First_Name</a>
+        </AntDesign.Column>
+        <AntDesign.Column @bind-Field=@context.Last_Name>
 
-<Table TItem="Product"
-       DataSource="@_data.Data"
-       HidePagination="true">
-    <AntDesign.Column @bind-Field=@context.Id />
-    <AntDesign.Column @bind-Field=@context.Email>
-        <TitleTemplate>
-            <FlexBox JustifyContent="center" AlignItems="center"> <Icon Type="mail" /> Email   </FlexBox>
-        </TitleTemplate>
-        <ChildContent>
-            <a>@context.Email</a>
-        </ChildContent>
-    </AntDesign.Column>
-    <AntDesign.Column @bind-Field=@context.First_Name>
-        <a>@context.First_Name</a>
-    </AntDesign.Column>
-    <AntDesign.Column @bind-Field=@context.Last_Name>
+        </AntDesign.Column>
+        <AntDesign.Column @bind-Field=@context.Avatar>
+            <Avatar Src=@context.Avatar Size="80" />
+        </AntDesign.Column>
+    </Table>
+    <Divider />
 
-    </AntDesign.Column>
-    <AntDesign.Column @bind-Field=@context.Avatar>
-        <Image Preview="false" Src=@context.Avatar Height="100px" />
-    </AntDesign.Column>
-</Table>
-<Divider />
-<Row Justify="center">
-    <AntDesign.Col>
-        <Pagination ShowSizeChanger="true"
-                    PageSizeOptions="new int[] {6, 12}"
-                    OnChange="OnShowSizeChange"
-                    PageSize="@PageSize"
-                    Current="@PageIndex"
-                    Total="@_data.Total" />
-    </AntDesign.Col>
-</Row>
+    <Row Justify="center">
+        <AntDesign.Col>
+            <Pagination ShowSizeChanger="true"
+                        PageSizeOptions="new int[] {6, 12}"
+                        OnChange="OnShowSizeChange"
+                        PageSize="@PageSize"
+                        Current="@PageIndex"
+                        Total="@_data.Total" />
+        </AntDesign.Col>
+    </Row>
+}
+
 
 @code {
 

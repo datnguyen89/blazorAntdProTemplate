@@ -1,9 +1,9 @@
 ﻿@namespace blazorAntdProTemplate
 @inherits LayoutComponentBase
-@inject AppState appState
+@inject IAppStateService appStateService
 
 
-<AntDesign.Pro.Layout.BasicLayout Logo="@("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg")" MenuData="_menuData">
+<AntDesign.Pro.Layout.BasicLayout FixedHeader="true" Logo="@("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg")" MenuData="_menuData">
     <RightContentRender>
         <blazorAntdProTemplate.Components.RightContent />
     </RightContentRender>
@@ -13,7 +13,7 @@
     </ChildContent>
 </AntDesign.Pro.Layout.BasicLayout>
 
-<LoadingAnimation Loading="@appState.AppLoading" />
+<LoadingAnimation Loading="@appStateService.IsLoading" />
 
 @code
 {
@@ -25,11 +25,11 @@
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        appState.OnChangeAppLoading += StateHasChanged;
+        appStateService.OnChangeAppLoading += StateHasChanged;
         _menuData = await HttpClient.GetFromJsonAsync<MenuDataItem[]>("data/menu.json");
     }
     public void Dispose()
     {
-        appState.OnChangeAppLoading -= StateHasChanged;
+        appStateService.OnChangeAppLoading -= StateHasChanged;
     }
 }

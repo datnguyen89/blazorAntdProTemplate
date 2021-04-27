@@ -1,9 +1,12 @@
 ﻿@namespace blazorAntdProTemplate.Components
+@inject IMyTransientService TransientService
 
 <Tag Color="orange-inverse">
-    Binding 1 chiều: @WaterfallProp
+    @WaterfallProp.ToString()
 </Tag>
+<p>@TransientService.InstanceNumber</p>
+
 @code {
     [Parameter]
-    public int WaterfallProp { get; set; } // param truyền xuống component con dưới dạng 1 prop
+    public object WaterfallProp { get; set; } // param truyền xuống component con dưới dạng 1 prop
 }

@@ -1,0 +1,22 @@
+﻿@page "/di/di-page"
+<div>
+    <input id="show-first" type="checkbox" @bind=ShowFirst /><label for="show-first">Show first</label>
+    @if (ShowFirst)
+    {
+        <OneWayBinding WaterfallProp="126" />
+    }
+</div>
+
+<div>
+    <input id="show-second" type="checkbox" @bind=ShowSecond /><label for="show-second">Show second</label>
+    @if (ShowSecond)
+    {
+        <OneWayBinding WaterfallProp=456 />
+    }
+</div>
+
+@code
+{
+    bool ShowFirst;
+    bool ShowSecond;
+}

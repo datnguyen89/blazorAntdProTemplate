@@ -1,6 +1,6 @@
 ﻿@namespace blazorAntdProTemplate.Components
 
-@if (Loading > 0)
+@if (Loading)
 {
     <div class="loading-animation-wrapper">
         <Spin Size="large" />
@@ -9,5 +9,5 @@
 
 @code{
     [Parameter]
-    public int Loading { set; get; }
+    public bool Loading { set; get; }
 }

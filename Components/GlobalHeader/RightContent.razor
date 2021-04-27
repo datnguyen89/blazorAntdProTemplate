@@ -1,7 +1,7 @@
 ﻿@namespace blazorAntdProTemplate.Components
 @inherits AntDomComponentBase
 
-<Space Class="@ClassMapper.Class">
+<Space Class="@ClassMapper.Class" Size="@("16")">
     <SpaceItem>
         <HeaderSearch Class="action search"
                       Placeholder="Site Search"
@@ -18,26 +18,26 @@
         </AntDesign.Tooltip>
     </SpaceItem>
     <SpaceItem>
-        <NoticeIcon ClearText="Empty"
-                    ViewMoreText="see more"
+        <NoticeIcon ClearText="Xóa"
+                    ViewMoreText="See more"
                     Count="_count"
-                    OnClear="HandleClear"
+                    OnClear="HandleClear"                    
                     OnViewMore="HandleViewMore">
             <NoticeList TabKey="notification"
-                        Title="Notifications"
-                        EmptyText="You have viewed all notifications"
-                        ShowViewMore
+                        Title="Thông báo"
+                        EmptyText="You have viewed all notifications"                        
+                        ShowViewMore                        
                         Data="_notifications" />
-            <NoticeList TabKey="message"
-                        Title="Messages"
-                        EmptyText="You have read all messages"
-                        ShowViewMore
-                        Data="_messages" />
-            <NoticeList TabKey="event"
-                        Title="Upcoming"
-                        EmptyText="You have completed all to do"
-                        ShowViewMore
-                        Data="_events" />
+            @*<NoticeList TabKey="message"
+                            Title="Messages"
+                            EmptyText="You have read all messages"
+                            ShowViewMore
+                            Data="_messages" />
+                <NoticeList TabKey="event"
+                            Title="Upcoming"
+                            EmptyText="You have completed all to do"
+                            ShowViewMore
+                            Data="_events" />*@
         </NoticeIcon>
     </SpaceItem>
     <SpaceItem>
@@ -49,3 +49,5 @@
         <SelectLang OnItemSelected="HandleSelectLang" />
     </SpaceItem>
 </Space>
+
+

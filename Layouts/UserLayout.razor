@@ -1,7 +1,7 @@
 ﻿@namespace blazorAntdProTemplate
 @using OneOf
 @inherits LayoutComponentBase
-@inject AppState appState
+@inject IAppStateService appStateService
 
 <div class="container__b__0">
     <blazorAntdProTemplate.Components.LostConnect.LostConnect />
@@ -25,7 +25,7 @@
             Copyright <Icon Type="copyright" /> 2019 蚂蚁金服体验技术部出品
         </Copyright>
     </GlobalFooter>
-    <LoadingAnimation Loading="@appState.AppLoading" />
+    <LoadingAnimation Loading="@appStateService.IsLoading" />
 </div>
 
 @code
