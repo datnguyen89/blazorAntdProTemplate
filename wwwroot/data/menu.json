@@ -174,7 +174,7 @@
   },
   {
     "path": "/product",
-    "name": "Productsss",
+    "name": "Products",
     "key": "product",
     "icon": "barcode",
     "children": [
