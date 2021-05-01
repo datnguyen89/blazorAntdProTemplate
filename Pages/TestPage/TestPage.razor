@@ -1,4 +1,6 @@
 ﻿@page "/test-page"
+@*@page "/test-page/{testQueryString}"*@
+@page "/test-page/{testQueryNumber:int}"
 
 <div>
     <Divider Orientation="left">Binding Literal & Expression</Divider>
@@ -52,10 +54,19 @@
     <Divider Orientation="left">Generated HTML Attribute</Divider>
     <GeneratedHTMLAttributes />
 
-
+    @* Test query string *@
+    <p>
+        Query string
+        @*@if (testQueryString != null)
+        {*@
+            @*<span>@testQueryString</span>*@
+            <span>@testQueryNumber</span>
+        @* } *@
+    </p>
 </div>
 
 @code {
+
     private int propOfOneWayBinding = 123; // khởi tạo giá trị truyền vào cho OneWayBinding
     private bool expressionComponentVisible = true;
     private string expressionComponentText = "Truyền vào props dạng biểu thức thì thêm @ vào bên phải props";
@@ -120,4 +131,12 @@
         var task2 = Task.Factory.StartNew(getSample2);
         Task.WaitAll(task1, task2);
     }
+
+    // Test Query string
+
+    //[Parameter]
+    //public string testQueryString { get; set; }
+    [Parameter]
+    public int testQueryNumber { get; set; }
+
 }
