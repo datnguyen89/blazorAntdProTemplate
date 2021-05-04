@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using AntDesign.Pro.Layout;
 using blazorAntd.Services;
 using blazorAntd.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace blazorAntd
 {
@@ -32,7 +33,7 @@ namespace blazorAntd
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddAntDesign();
-			services.AddScoped(sp => new HttpClient
+            services.AddScoped(sp => new HttpClient
             {
                 BaseAddress = new Uri(sp.GetService<NavigationManager>().BaseUri)
             });
@@ -43,7 +44,9 @@ namespace blazorAntd
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IProfileService, ProfileService>();
             services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<IAppStateService , AppStateService>();
+            services.AddScoped<IAppStateService, AppStateService>();
+
+            services.AddDbContext<blazorAntdDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddSingleton<IMySingletonService, MySingletonService>();
             services.AddScoped<IMyScopedService, MyScopedService>();

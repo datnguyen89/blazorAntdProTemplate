@@ -58,11 +58,15 @@
     <p>
         Query string
         @*@if (testQueryString != null)
-        {*@
-            @*<span>@testQueryString</span>*@
-            <span>@testQueryNumber</span>
+            {*@
+        @*<span>@testQueryString</span>*@
+        <span>@testQueryNumber</span>
         @* } *@
     </p>
+
+    @* Test EF db context *@
+    <Button Type="primary" @onclick="AddUser">Add User</Button>
+    <Button Danger="true" @onclick="AddUsers">Add Users</Button>
 </div>
 
 @code {
@@ -139,4 +143,30 @@
     [Parameter]
     public int testQueryNumber { get; set; }
 
+    [Inject] protected blazorAntdDbContext _context { get; set; }
+    [Inject] protected MessageService _message { get; set; }
+
+    private async void AddUser()
+    {
+        var user = new User()
+        {
+            UserName = "Admin"
+        };
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
+        await _message.Info("Added User!");
+    }
+    private async void AddUsers()
+    {
+        var lUser = new List<User>();
+        for (int i = 1; i <= 3; i++)
+        {
+            User user = new User() { UserName = $"Admin{i}" };
+
+            lUser.Add(user);
+        }
+        _context.Users.AddRange(lUser);
+        await _context.SaveChangesAsync();
+        await _message.Info("Added Users!");
+    }
 }

@@ -20,7 +20,7 @@ namespace blazorAntd.Services
         }
 
         public async Task<CurrentUser> GetCurrentUserAsync()
-        {
+        {            
             return await _httpClient.GetFromJsonAsync<CurrentUser>("data/current_user.json");
         }
     }
